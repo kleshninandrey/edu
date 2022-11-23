@@ -3,10 +3,10 @@ using System.Linq;
 
 class FormalNeuronDemo {
 	class Neuron {
-		double a = 0.02;
-		double b = -0.4;
-		public double[] w = {0, 0, 0, 0};
-		public int c = 0;
+		public double a {  get;}= 0.02; 	// свойства с модификаторами доступа, 
+		public double b {  get;}= -0.4; 	//которые  делают свойства доступными только для чтения в нашем случае
+		public double[] w {  get;}= {0, 0, 0, 0};
+		public int c {  get;} = 0;
 
 
         public Neuron (LData []X) { 
@@ -38,6 +38,8 @@ class FormalNeuronDemo {
 
 	}
 
+//Входные данные описаны в виде структуры. позволяет объединить 
+// обучающие данные в одну переменную типа LData и обращаться в последствии к полям одной структуры
 	 struct LData
 	 {	
 		public int [] x;
@@ -53,7 +55,7 @@ class FormalNeuronDemo {
 		new int [] {1, 1, 1, 0}, 
 		new int [] {1, 1, 1, 1}
 	};
-
+// Инициируем массив структур типа LData
 	public static int Main() {
 		LData [] X = new LData[5];
 		X[0].x = new int [] {0, 0, 0, 0}; X[0].y = 0;
